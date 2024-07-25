@@ -1,3 +1,3 @@
 FROM hello-world:latest
 
-ARG test=1
+ARG test=2
