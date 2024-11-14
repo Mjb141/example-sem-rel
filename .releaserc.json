@@ -1,26 +1,18 @@
 {
-  "release": {
-    "branches": [
+  "branches": [
+    {
+      "name": "main"
+    }
+  ],
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/github",
+    [
+      "@semantic-release/git",
       {
-        "name": "main"
+        "message": "chore(release): ${nextRelease.version}\n\n${nextRelease.notes}"
       }
     ]
-  },
-  "plugins": [
-    [
-      "@semantic-release/commit-analyzer",
-      {
-        "type": "docs",
-        "scope": "README",
-        "release": "patch"
-      }
-    ],
-    [
-      "@semantic-release/release-notes-generator",
-      {
-        "preset": "conventionalcommits"
-      }
-    ],
-    "@semantic-release/github"
   ]
 }
