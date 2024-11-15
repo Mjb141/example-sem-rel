@@ -14,6 +14,6 @@ jobs:
         GH_TOKEN: ${{ secrets.PAT }}
       with:
         module: github.com/mjb141/sem-rel
-        call: release --token env:GH_TOKEN --dir . stdout
+        call: release --token GH_TOKEN --dir . stdout
         cloud-token: ${{ secrets.DAGGER_CLOUD_TOKEN }}
 
