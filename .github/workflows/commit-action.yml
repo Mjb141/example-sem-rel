@@ -12,6 +12,6 @@ jobs:
       uses: dagger/dagger-for-github@v7.0.1
       with:
         module: github.com/mjb141/sem-rel
-        call: --token ${{secrets.GITHUB_TOKEN}} --dir . stdout
+        call: release --token ${{secrets.GITHUB_TOKEN}} --dir . stdout
         cloud-token: ${{ secrets.DAGGER_CLOUD_TOKEN }}
 
