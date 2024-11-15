@@ -1,0 +1,13 @@
+name: Run on Commit
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    - name: Run a script
+      run: echo "This runs on every commit"
+
