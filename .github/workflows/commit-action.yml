@@ -1,0 +1,17 @@
+name: Run on Commit
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    - name: Semantic Release Dry Run
+      uses: dagger/dagger-for-github@v7.0.1
+      with:
+        module: github.com/mjb141/sem-rel
+        call: release --token env:PAT --dir . stdout
+        cloud-token: ${{ secrets.DAGGER_CLOUD_TOKEN }}
+
