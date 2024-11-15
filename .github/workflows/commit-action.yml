@@ -11,9 +11,9 @@ jobs:
     - name: Semantic Release Dry Run
       uses: dagger/dagger-for-github@v7.0.1
       env:
-        PAT: ${{ secrets.PAT }}
+        GH_TOKEN: ${{ secrets.PAT }}
       with:
         module: github.com/mjb141/sem-rel
-        call: release --token PAT --dir . stdout
+        call: release --token env:GH_TOKEN --dir . stdout
         cloud-token: ${{ secrets.DAGGER_CLOUD_TOKEN }}
 
