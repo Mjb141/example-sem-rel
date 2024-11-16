@@ -35,6 +35,8 @@ You can modify your `.releaserc.json` file with the `configure` method.
 
 ### Release Options
 
-- `--add-current-branch` *(Optional, default 'false')* Optional ability to add your current branch to `branches` in `.releaserc.json`. Useful to test what will happen on your current branch before merging to main.
+- `--add-current-branch` *(Optional, default 'false')* Add your current branch to `branches` in `.releaserc.json`. Useful to test what will happen on your current branch before merging to main.
+
+- `--remove-git-provider` *(Optional, default 'false') Remove either `@semantic-release/github` or `@semantic-release/gitlab` from your `plugins` list in `.releaserc.json`. This removes the requirement to provide a token for cases when you cannot.
 
 **This does not modify your `.releaserc.json` configuration file**. A modified copy of the configuration file is created for the duration of the container and discarded on completion.
